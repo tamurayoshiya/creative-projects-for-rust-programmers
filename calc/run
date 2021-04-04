@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# (Boilerplate Variables)
+SCRIPT_NAME=`basename "$0"`
+PROJECT_ROOT=$(git rev-parse --show-toplevel)
+PROJECT_NAME=$(basename $PROJECT_ROOT | sed s/-//g)
+
+# (Always on the root dir of the git repository)
+cd $PROJECT_ROOT
+
+# ------------------------------
+
+cd calc/ && cargo run
